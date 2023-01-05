@@ -1,25 +1,16 @@
 import { Router } from 'express';
-import path from 'path';
-import { __dirname } from '../utils/utils.js';
+import { about, blackMarket, contact, gallery, home } from '../controller/controller.js';
 
 const router = Router();
 
-router.get('/', (req, res) => res.sendFile(path.join(__dirname, '/../public/index.html')));
+router.get('/', home);
 
-router.get('/about', (req, res) =>
-	res.sendFile(path.join(__dirname, '/../public/pages/about.html'))
-);
+router.get('/about', about);
 
-router.get('/black-market', (req, res) =>
-	res.sendFile(path.join(__dirname, '/../public/pages/black-market.html'))
-);
+router.get('/black-market', blackMarket);
 
-router.get('/gallery', (req, res) =>
-	res.sendFile(path.join(__dirname, '/../public/pages/gallery.html'))
-);
+router.get('/gallery', gallery);
 
-router.get('/contact', (req, res) =>
-	res.sendFile(path.join(__dirname, '/../public/pages/contact.html'))
-);
+router.get('/contact', contact);
 
 export default router;
