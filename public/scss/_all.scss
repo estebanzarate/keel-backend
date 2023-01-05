@@ -1,0 +1,178 @@
+@import 'variables', 'animations';
+
+body {
+	&::-webkit-scrollbar {
+		width: 0.4rem;
+		background-color: $gray-color;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		width: 0.4rem;
+		background-color: #000;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: #f50000;
+	}
+
+	.header-blood {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		opacity: .6;
+		z-index: -200;
+	}
+
+	header {
+		position: fixed;
+		top: 0;
+		width: 100%;
+
+		nav {
+			padding-top: 0.5rem;
+
+			ul {
+				display: flex;
+				justify-content: space-evenly;
+
+				li {
+					list-style: none;
+
+					&:hover {
+						animation: zoomNavLinks .3s ease;
+					}
+
+					a {
+						color: $white-color;
+						text-decoration: none;
+						font-size: clamp(0.8rem, 2.5vw, 1.5rem);
+					}
+				}
+			}
+		}
+	}
+
+	footer {
+		position: relative;
+
+		address {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+
+			.fas {
+				font-size: clamp(2rem, 3vw, 5rem);
+				color: $blood;
+			}
+
+			.place {
+				p {
+					font-family: friday;
+					font-size: clamp(1.5rem, 4vw, 3rem);
+					color: rgb(194, 186, 186);
+					text-align: center;
+					text-shadow: 2px 2px#000;
+
+					span {
+						font-family: veintiocho;
+						color: red;
+						opacity: .8;
+					}
+				}
+			}
+		}
+
+		.social-media {
+			display: flex;
+			justify-content: space-evenly;
+			padding: 1rem;
+
+			a {
+				font-size: 1.8rem;
+				color: rgb(173, 7, 7);
+			}
+
+			a:link {
+				color: rgb(173, 7, 7);
+			}
+
+			a:visited {
+				color: rgb(173, 7, 7);
+			}
+
+			a:hover {
+				text-shadow: 0 0 3px $white-color;
+			}
+
+			a:active {
+				color: $blood;
+			}
+		}
+
+		.spoti {
+			padding: 0.5rem;
+
+			iframe {
+				display: flex;
+				justify-content: center;
+				border: 1px inset $blood;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 600px) {
+	body {
+		header {
+			nav {
+				ul {
+					justify-content: flex-end;
+					gap: 1rem;
+					padding-inline: 1rem;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	body {
+		footer {
+			display: flex;
+			justify-content: space-between;
+
+			address {
+				order: 1;
+			}
+
+			.social-media {
+				order: 0;
+				flex-direction: column;
+				gap: 1rem;
+			}
+
+			.spoti {
+				order: 2;
+				flex: 0.8;
+				display: flex;
+				align-items: flex-end;
+				max-width: 40rem;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	body {
+		header {
+			nav {
+				padding: 1rem;
+
+				ul {
+					padding-inline: unset;
+				}
+			}
+		}
+	}
+}

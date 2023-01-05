@@ -1,0 +1,127 @@
+.body-contact {
+    @include bgImg(black, no-repeat, top center, fixed);
+    background-size: cover;
+    padding-top: 10rem;
+
+    .main-contact {
+        position: relative;
+        z-index: 100;
+
+        .horror-form {
+            position: relative;
+            max-width: 450px;
+            margin-inline: auto;
+            padding: 0.5rem;
+
+            input {
+                width: 100%;
+                height: 3rem;
+                outline: none;
+                margin: 0.5rem 0;
+                border: none;
+                border-radius: .5rem;
+                padding-left: 1rem;
+                background: rgba(46, 42, 42, .5);
+                color: rgb(218, 216, 216);
+                font-family: veintiocho;
+                font-size: 1.8rem;
+
+                &:hover {
+                    box-shadow: 0px 0px 10px 1px white;
+                    transition: 0.2s ease;
+                }
+
+                &[type=submit] {
+                    width: 7.5rem;
+                    padding: 0.2rem;
+                    text-align: center;
+                    color: black;
+                    cursor: pointer;
+
+                    &:hover {
+                        box-shadow: 1px 1px 10px 1px rgb(0, 0, 0);
+                    }
+
+                    &:active {
+                        transform: translateY(.1rem) scale(.9);
+                        box-shadow: none;
+                    }
+                }
+            }
+
+            .textarea-container {
+                position: relative;
+                margin: 0.5rem 0;
+
+                textarea {
+                    width: 100%;
+                    height: 20rem;
+                    display: flex;
+                    background: rgba(46, 42, 42, .5) url("../assets/images/contact/screamx.png") no-repeat right bottom;
+                    background-size: 10rem;
+                    outline: none;
+                    border: none;
+                    border-radius: .5rem;
+                    padding: 1rem;
+                    font-family: veintiocho;
+                    font-size: 1.8rem;
+                    color: rgb(218, 216, 216);
+                    resize: none;
+
+                    &::placeholder {
+                        font-size: 1.8rem;
+                    }
+
+                    &:hover {
+                        box-shadow: 0px 0px 10px 1px white;
+                        transition: .2s ease;
+                    }
+                }
+
+                .more-blood {
+                    position: absolute;
+                    width: 8rem;
+                    top: 100%;
+                    left: 0.5rem;
+                    opacity: 0.6;
+                    z-index: -200;
+                }
+            }
+        }
+
+        .game {
+            position: absolute;
+            top: -7rem;
+            right: 0.5rem;
+            z-index: -200;
+
+            .game-text {
+                color: $blood;
+                font-family: friday;
+                font-size: clamp(1.4rem, 5vw, 1.8rem);
+                inline-size: min-content;
+                text-align: center;
+                transform: translate(-2rem, 1rem) rotateZ(-35deg);
+            }
+
+            .game-img {
+                width: 8rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .body-contact {
+        .main-contact {
+            .game {
+                top: 18rem;
+                right: 1rem;
+
+                .game-text {
+                    transform: translate(-3rem, 1rem) rotateZ(-35deg);
+                }
+            }
+        }
+    }
+}

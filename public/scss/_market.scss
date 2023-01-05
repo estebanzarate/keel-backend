@@ -1,0 +1,100 @@
+.body-market {
+    @include bgImg(black, no-repeat, bottom center, fixed);
+    padding-top: 8rem;
+
+    .main-market {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+        justify-content: center;
+        gap: 2rem;
+        margin-inline: auto;
+        padding: 1rem;
+        z-index: -1;
+
+        .toy {
+            border-right: .6rem inset red;
+            border-top-right-radius: 35%;
+            border-bottom-right-radius: 75%;
+            position: relative;
+
+            .toy-img {
+                padding-right: 1rem;
+
+                img {
+                    width: 100%;
+                    height: 20rem;
+                    object-fit: cover;
+                    border-top-left-radius: 2.5%;
+                    border-top-right-radius: 45%;
+                    border-bottom-left-radius: 20%;
+                    border-bottom-right-radius: 75%;
+                    box-shadow: 0 2px 5px black;
+                }
+
+                .toy-price {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    width: 100%;
+                    height: 20rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    &:hover {
+                        opacity: 1;
+                        transition: .8s;
+                    }
+
+                    p {
+                        font-size: 3rem;
+                        font-family: friday;
+                        color: $blood;
+                        text-shadow: 1px 1px 1px #000;
+                        transform: rotateZ(-30deg) translateY(4rem) translateX(-3rem);
+                    }
+                }
+
+
+            }
+
+            .toy-name {
+                p {
+                    font-family: friday;
+                    font-size: 2.5rem;
+                    letter-spacing: .1rem;
+                    color: $blood;
+                }
+            }
+
+            .toy-btn {
+                padding-bottom: 1rem;
+
+                input[type="button"] {
+                    width: 5rem;
+                    border: none;
+                    border-radius: 0.5rem;
+                    padding: 0.4rem 0.8rem;
+                    font-family: veintiocho;
+                    font-size: 2rem;
+                    color: black;
+                    transform-origin: top right;
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: red;
+                    }
+
+                    &:active {
+                        background-color: red;
+                        color: white;
+                        transform: rotateZ(-45deg);
+                        transition: 0.1s;
+                    }
+                }
+            }
+        }
+    }
+}

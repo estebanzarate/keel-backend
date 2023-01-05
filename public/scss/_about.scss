@@ -1,0 +1,133 @@
+@for $i from 1 through 20 {
+	.aboutDes-#{$i} {
+		animation-name: aboutDes;
+		animation-duration: .3s * $i;
+		animation-timing-function: ease;
+		animation-direction: alternate;
+		animation-iteration-count: infinite;
+	}
+}
+
+.body-about {
+	@include bgImg(black, no-repeat, center, fixed);
+	padding-top: 5rem;
+
+	.feel {
+		position: absolute;
+		top: clamp(2.2rem, 2vw, 0.5rem);
+		left: clamp(0.5rem, 2vw, 1rem);
+		font-family: friday;
+		font-size: clamp(1rem, 4vw, 4rem);
+		color: gold;
+		transform: rotateZ(-6deg);
+	}
+
+	.main-about {
+		z-index: -1;
+
+		.crazy {
+			display: flex;
+			justify-content: flex-end;
+
+			p {
+				font-family: friday;
+				font-size: clamp(1rem, 5vw, 3rem);
+				inline-size: clamp(10rem, 30vw, 30rem);
+				text-align: center;
+				color: rgb(225, 0, 0);
+				text-shadow: 1px 1px 2px #fff, -1px -1px 2px #fff;
+				transform: rotateZ(3deg);
+			}
+		}
+
+		.about {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+			justify-content: center;
+			gap: 2rem;
+			padding: 2rem 0;
+
+			.about-container {
+				.about-img {
+					display: flex;
+					width: clamp(200px, 40vw, 300px);
+					height: clamp(200px, 40vw, 300px);
+					margin-inline: auto;
+
+					img {
+						width: 100%;
+						height: 100%;
+						border-radius: 50%;
+						object-fit: cover;
+						filter: blur(2px);
+						box-shadow: 2px 2px 100px 10px rgb(24, 16, 16);
+
+						&:last-child:hover {
+							filter: blur(0.3px);
+							box-shadow: 2px 2px 100px 0px rgba(255, 255, 255, 0.233);
+							opacity: 1;
+							transition: .3s ease;
+						}
+					}
+				}
+
+				h2 {
+					padding: 1rem 0;
+					font-family: 'Londrina Shadow', cursive;
+					font-size: 2.5rem;
+					color: rgba(255, 255, 255, 0.705);
+					text-align: center;
+					text-shadow: 1px 1px 2px rgb(0, 0, 0);
+
+					span {
+						margin: -.1rem
+					}
+				}
+			}
+		}
+
+		.mission {
+			position: relative;
+			max-width: 1200px;
+			margin-inline: auto;
+			padding: 1rem;
+
+			p {
+				font-family: veintiocho;
+				font-size: clamp(1.5rem, 4vw, 3.5rem);
+				text-align: center;
+				color: $gray-color;
+				text-shadow: 2px 2px 10px #000;
+			}
+
+			p:last-child {
+				font-size: clamp(1.2rem, 4vw, 2rem);
+				color: $white-color;
+				transform: translateY(-5rem) rotateZ(5deg);
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.body-about {
+		.main-about {
+			.about {
+				padding: 2rem;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.body-about {
+		.main-about {
+			.about {
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				margin-inline: auto;
+			}
+		}
+	}
+}

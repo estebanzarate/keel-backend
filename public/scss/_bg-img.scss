@@ -1,0 +1,16 @@
+@each $bg-img in indexBg,
+aboutBg,
+marketBg,
+galleryBg,
+contactBg {
+    .#{$bg-img} {
+        background-image: url("../assets/images/bg/#{$bg-img}.jpg");
+    }
+}
+
+@mixin bgImg($bg-color, $bg-repeat, $bg-position, $bg-attachment) {
+    background-color: $bg-color;
+    background-repeat: $bg-repeat;
+    background-position: $bg-position;
+    background-attachment: $bg-attachment;
+}
