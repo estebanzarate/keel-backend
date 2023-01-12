@@ -1,14 +1,26 @@
-### Server
+## Server
 
-Express
+#### Express
 
 ```javascript
 npm i express
 ```
 
-### Client
+#### Mongoose
 
-Sass
+```javascript
+npm i mongoose --save
+```
+
+Bcrypt
+
+```javascript
+npm i bcrypt
+```
+
+## Client
+
+#### Sass
 
 ```javascript
 npm i sass
