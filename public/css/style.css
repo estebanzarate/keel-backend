@@ -595,7 +595,7 @@ body footer .spoti iframe {
 .body-market .main-market .toy .toy-btn {
   padding-bottom: 1rem;
 }
-.body-market .main-market .toy .toy-btn input[type=button] {
+.body-market .main-market .toy .toy-btn .btn-buy {
   width: 5rem;
   border: none;
   border-radius: 0.5rem;
@@ -603,17 +603,14 @@ body footer .spoti iframe {
   font-family: veintiocho;
   font-size: 2rem;
   color: black;
-  transform-origin: top right;
 }
-.body-market .main-market .toy .toy-btn input[type=button]:hover {
+.body-market .main-market .toy .toy-btn .btn-buy:hover {
   cursor: pointer;
   background-color: red;
 }
-.body-market .main-market .toy .toy-btn input[type=button]:active {
+.body-market .main-market .toy .toy-btn .btn-buy:active {
   background-color: red;
   color: white;
-  transform: rotateZ(-45deg);
-  transition: 0.1s;
 }
 
 .body-gallery {

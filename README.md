@@ -1,26 +1,44 @@
 ## Server
 
-#### Express
+#### express
 
 ```javascript
 npm i express
 ```
 
-#### Mongoose
+#### mongoose
 
 ```javascript
 npm i mongoose --save
 ```
 
-Bcrypt
+#### bcrypt
 
 ```javascript
 npm i bcrypt
 ```
 
+#### jsonwebtoken
+
+```javascript
+npm i jsonwebtoken
+```
+
+#### passport jwt
+
+```javascript
+npm i passport-jwt
+```
+
+#### passport
+
+```javascript
+npm i passport
+```
+
 ## Client
 
-#### Sass
+#### sass
 
 ```javascript
 npm i sass

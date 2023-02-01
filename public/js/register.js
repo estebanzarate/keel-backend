@@ -1,13 +1,13 @@
 const formNewUser = document.getElementById('new-user');
-formNewUser.addEventListener('submit', e => createUser(e));
+formNewUser.addEventListener('submit', e => registerUser(e));
 
-const createUser = async e => {
+const registerUser = async e => {
 	e.preventDefault();
-	const dataNewUser = new FormData(e.target);
+	const newUser = new FormData(e.target);
 
 	const data = {
-		email: dataNewUser.get('userEmail'),
-		password: dataNewUser.get('userPassword')
+		email: newUser.get('email'),
+		password: newUser.get('password')
 	};
 
 	const res = await fetch('http://localhost:8080/register', {

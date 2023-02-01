@@ -72,7 +72,7 @@
             .toy-btn {
                 padding-bottom: 1rem;
 
-                input[type="button"] {
+                .btn-buy {
                     width: 5rem;
                     border: none;
                     border-radius: 0.5rem;
@@ -80,7 +80,6 @@
                     font-family: veintiocho;
                     font-size: 2rem;
                     color: black;
-                    transform-origin: top right;
 
                     &:hover {
                         cursor: pointer;
@@ -90,8 +89,6 @@
                     &:active {
                         background-color: red;
                         color: white;
-                        transform: rotateZ(-45deg);
-                        transition: 0.1s;
                     }
                 }
             }

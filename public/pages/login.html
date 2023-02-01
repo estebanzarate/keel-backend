@@ -5,21 +5,24 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>keel | register</title>
+        <title>keel | login</title>
     </head>
 
     <body>
-        <h1>REGISTER</h1>
-        <form id='new-user'>
+        <h1>LOGIN</h1>
+        <form id='login-form' method='post'>
             <div>
                 <input type="email" name="email" required>
             </div>
             <div>
                 <input type="password" name="password" required>
             </div>
-            <input type="submit" value="registrate">
+            <div>
+                <input type="submit" value="login">
+            </div>
         </form>
-        <script src="../js/register.js"></script>
+        <script src="../js/login.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     </body>
 
 </html>
