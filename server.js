@@ -11,7 +11,7 @@ import router from './routes/routes.js';
 const { MONGODB_USER, MONGODB_PASS } = process.env;
 
 const app = express();
-const PORT = process.env || 8080;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/../public'));
 app.use(express.json());
