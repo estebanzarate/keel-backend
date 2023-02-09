@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import bcrypt from 'bcrypt';
-import path from 'path';
 import { __dirname } from '../utils/utils.js';
 import {
 	about,
@@ -8,7 +7,6 @@ import {
 	contact,
 	gallery,
 	home,
-	getProducts,
 	register,
 	login
 } from '../controller/controller.js';
@@ -21,7 +19,6 @@ router.get('/about', about);
 router.get('/black-market', blackMarket);
 router.get('/gallery', gallery);
 router.get('/contact', contact);
-router.get('/products', getProducts);
 router.get('/register', register);
 router.get('/login', login);
 
