@@ -36,6 +36,10 @@
   background-image: url("../assets/images/bg/loginBg.jpg");
 }
 
+.registerBg {
+  background-image: url("../assets/images/bg/registerBg.jpg");
+}
+
 @keyframes zoomNavLinks {
   0% {
     transform: scale(1, 1);
@@ -837,20 +841,23 @@ body footer .spoti iframe {
   background-attachment: fixed;
   background-size: cover;
   padding: 10rem 0.5rem 0.5rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.body-login h1 {
+.body-login div h1 {
   padding: 1rem;
   color: rgb(207, 0, 0);
   font-family: friday;
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 10vw, 4rem);
   text-align: center;
   letter-spacing: 0.2rem;
 }
-.body-login form {
+.body-login div form {
   max-width: 450px;
   margin-inline: auto;
 }
-.body-login form div input {
+.body-login div form div input {
   width: 100%;
   height: 3rem;
   outline: none;
@@ -863,28 +870,114 @@ body footer .spoti iframe {
   font-family: veintiocho;
   font-size: 1.8rem;
 }
-.body-login form div input:hover {
+.body-login div form div input:hover {
   box-shadow: 0px 0px 10px 1px white;
   transition: 0.2s ease;
 }
-.body-login form div input[type=submit] {
-  width: 7.5rem;
-  padding: 0.2rem;
+.body-login div form div input[type=submit] {
+  width: fit-content;
+  padding: 0.4rem 0.8rem;
   text-align: center;
   color: #fff;
   cursor: pointer;
 }
-.body-login form div input[type=submit]:hover {
+.body-login div form div input[type=submit]:hover {
   box-shadow: 1px 1px 10px 1px rgb(207, 0, 0);
 }
-.body-login form div input[type=submit]:active {
+.body-login div form div input[type=submit]:active {
   transform: translateY(0.1rem) scale(0.9);
   box-shadow: none;
 }
-.body-login form div .res-msg {
+.body-login div form div .res-msg {
   padding: 0.4rem 0;
   font-family: friday;
   color: rgb(207, 0, 0);
+}
+.body-login div p {
+  padding: 0.5rem 0;
+  text-indent: 1rem;
+}
+.body-login div p .account {
+  font-family: friday;
+  font-size: 1.2rem;
+  color: rgb(207, 0, 0);
+  text-decoration: none;
+}
+.body-login div p .account:hover {
+  color: rgba(207, 0, 0, 0.8);
+}
+
+.body-register {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 10rem 0.5rem 0.5rem 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body-register div h1 {
+  padding: 1rem;
+  color: rgb(207, 0, 0);
+  font-family: friday;
+  font-size: clamp(2.5rem, 10vw, 4rem);
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+.body-register div form {
+  max-width: 450px;
+  margin-inline: auto;
+}
+.body-register div form div input {
+  width: 100%;
+  height: 3rem;
+  outline: none;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  background: rgba(46, 42, 42, 0.5);
+  color: rgb(218, 216, 216);
+  font-family: veintiocho;
+  font-size: 1.8rem;
+}
+.body-register div form div input:hover {
+  box-shadow: 0px 0px 10px 1px white;
+  transition: 0.2s ease;
+}
+.body-register div form div input[type=submit] {
+  width: fit-content;
+  padding: 0.4rem 0.8rem;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}
+.body-register div form div input[type=submit]:hover {
+  box-shadow: 1px 1px 10px 1px rgb(207, 0, 0);
+}
+.body-register div form div input[type=submit]:active {
+  transform: translateY(0.1rem) scale(0.9);
+  box-shadow: none;
+}
+.body-register div form div .res-msg {
+  padding: 0.4rem 0;
+  font-family: friday;
+  color: rgb(207, 0, 0);
+}
+.body-register div p {
+  padding: 0.5rem 0;
+  text-indent: 1rem;
+}
+.body-register div p .account {
+  font-family: friday;
+  font-size: 1.2rem;
+  color: rgb(207, 0, 0);
+  text-decoration: none;
+}
+.body-register div p .account:hover {
+  color: rgba(207, 0, 0, 0.8);
 }
 
 /*# sourceMappingURL=style.css.map */

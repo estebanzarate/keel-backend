@@ -5,25 +5,30 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../assets/images/all/logo.png" type="image/x-icon">
         <link rel="stylesheet" href="../css/style.css">
         <title>keel | login</title>
     </head>
 
     <body class='body-login loginBg'>
-        <h1>Login</h1>
-        <form id='login-form' method='post'>
-            <div>
-                <input class='input-email' type="email" name="email" placeholder='email' required>
-            </div>
-            <div>
-                <input class='input-password' type="password" name="password" placeholder='password' required>
-            </div>
-            <div>
-                <input type="submit" value="login">
-            </div>
-        </form>
+        <div>
+            <h1>Login</h1>
+            <form id='login-form' method='post'>
+                <div>
+                    <input class='input-email' type="email" name="email" placeholder='email' required>
+                </div>
+                <div>
+                    <input class='input-password' type="password" name="password" placeholder='password' required>
+                </div>
+                <div>
+                    <input type="submit" value="login">
+                </div>
+            </form>
+            <p>
+                <a href='/register' class='account'>Don't you have an account yet?</a>
+            </p>
+        </div>
         <script src="../js/login.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     </body>
 
 </html>

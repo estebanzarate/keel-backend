@@ -5,20 +5,29 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="../assets/images/all/logo.png" type="image/x-icon">
+        <link rel="stylesheet" href="../css/style.css">
         <title>keel | register</title>
     </head>
 
-    <body>
-        <h1>REGISTER</h1>
-        <form id='new-user'>
-            <div>
-                <input type="email" name="email" required>
-            </div>
-            <div>
-                <input type="password" name="password" required>
-            </div>
-            <input type="submit" value="registrate">
-        </form>
+    <body class='body-register registerBg'>
+        <div>
+            <h1>REGISTER</h1>
+            <form id='new-user'>
+                <div>
+                    <input type="email" name="email" placeholder='email' required>
+                </div>
+                <div>
+                    <input type="password" name="password" placeholder='password' required>
+                </div>
+                <div>
+                    <input type="submit" value="register">
+                </div>
+            </form>
+            <p>
+                <a href='/login' class='account'>Do you have an account?</a>
+            </p>
+        </div>
         <script src="../js/register.js"></script>
     </body>
 
