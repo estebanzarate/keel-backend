@@ -2,7 +2,8 @@
 aboutBg,
 marketBg,
 galleryBg,
-contactBg {
+contactBg,
+loginBg {
     .#{$bg-img} {
         background-image: url("../assets/images/bg/#{$bg-img}.jpg");
     }
