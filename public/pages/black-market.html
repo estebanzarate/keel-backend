@@ -18,10 +18,21 @@
     </head>
 
     <body class="body-market marketBg">
+        <div id='cart' class='cart'>
+            <div>
+            </div>
+        </div>
+        <div class='btn-logout-container'>
+            <a href="/logout" id='btn-logout'>LOGOUT</a>
+        </div>
         <img class='header-blood' src="../assets/images/all/blood.png" alt="blood">
         <header>
-            <nav>
-                <ul>
+            <div class='burguer-menu'>
+                <img id='burguer-menu' src="assets/images/contact/game.png" alt="Burguer menu">
+            </div>
+            <nav id='nav'>
+                <img id='btn-close-nav' class='btn-close-nav' src="assets/images/all/x.png" alt="close nav">
+                <ul id='nav-ul'>
                     <li><a href="/">home</a></li>
                     <li><a href="/about">about</a></li>
                     <li><a href="/black-market">black market</a></li>
@@ -31,12 +42,6 @@
             </nav>
         </header>
         <main class="main-market"></main>
-        <div id='cart'>
-            <div>
-                <a href="/logout">LOGOUT</a>
-            </div>
-            <h1>Inicia sesión para ver tu carrito</h1>
-        </div>
         <footer>
             <address>
                 <i class="fas fa-map-marker-alt"></i>
@@ -61,6 +66,7 @@
                     loading="lazy"></iframe>
             </div>
         </footer>
+        <script src='js/all.js'></script>
         <script src="../js/black-market.js" type='module'></script>
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
     </body>

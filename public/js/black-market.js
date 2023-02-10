@@ -1,8 +1,8 @@
 const mainMarket = document.querySelector('.main-market');
+const btnBuy = document.querySelectorAll('.btn-buy');
 
 const getProducts = async () => {
 	const res = await fetch('http://localhost:8080/products');
-	console.log(document.cookie);
 	const TOYS = await res.json();
 	for (const toy of TOYS) {
 		mainMarket.innerHTML += `
@@ -25,19 +25,32 @@ const getProducts = async () => {
 };
 
 const addProduct = async e => {
-	await fetch(`http://localhost:8080/addProduct/${e.target.dataset.id}`, {
-		method: 'POST'
-	});
+	if (e.target.matches('.btn-buy')) {
+		await fetch(`http://localhost:8080/addProduct/${e.target.dataset.id}`, {
+			method: 'POST'
+		});
+	}
 };
 
-const isLoggedIn = async () => {
-	const res = await fetch('http://localhost:8080/');
+const getCart = async () => {
+	const res = await fetch('http://localhost:8080/cart');
+	const { token } = await res.json();
+	if (token) {
+	}
+};
+
+const logout = async e => {
+	if (e.target.matches('.btn-logout')) {
+		const res = await fetch('http://localhost:8080/logout');
+		console.log(res);
+		// if (res.ok) location.href = 'black-market';
+	}
 };
 
 document.addEventListener('click', e => {
-	if (e.target.matches('.btn-buy')) {
-		addProduct(e);
-	}
+	addProduct(e);
+	logout(e);
 });
 
 getProducts();
+getCart();

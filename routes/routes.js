@@ -8,7 +8,8 @@ import {
 	gallery,
 	home,
 	register,
-	login
+	login,
+	getProducts
 } from '../controller/controller.js';
 import User from '../models/userModel.js';
 
@@ -22,6 +23,11 @@ router.get('/contact', contact);
 router.get('/register', register);
 router.get('/login', login);
 
+router.get('/products', getProducts);
+router.get('/cart', (req, res) => {
+	res.status(200).json({ token: req.signedCookies.token });
+});
+
 router.post('/register', async (req, res) => {
 	const { email, password } = req.body;
 	const hash = await bcrypt.hash(password, 10);
@@ -34,8 +40,14 @@ router.post('/login', async (req, res) => {
 	const user = await User.findOne({ email });
 	if (!user) return res.status(404).json({ message: 'User not found' });
 	const hash = bcrypt.compareSync(password, user.password);
-	if (hash) return res.status(200).json({ message: 'Login successful' });
-	res.status(401).json({ message: 'Wrong password' });
+	if (!hash) return res.status(401).json({ message: 'Wrong password' });
+	res.status(200)
+		.cookie('token', 'token', { signed: true })
+		.json({ message: 'Login successful' });
+});
+
+router.get('/logout', (req, res) => {
+	res.status(200).clearCookie('token').json({ message: 'Logout' });
 });
 
 export default router;

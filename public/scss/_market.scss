@@ -2,6 +2,45 @@
     @include bgImg(black, no-repeat, bottom center, fixed);
     padding-top: 8rem;
 
+    .cart {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20rem;
+        height: 30rem;
+        background-color: #000;
+        z-index: 5;
+
+    }
+
+    .btn-logout-container {
+        display: flex;
+        justify-content: flex-end;
+
+        a {
+            width: fit-content;
+            margin: 0.5rem;
+            border-radius: .5rem;
+            padding: 0.4rem 0.8rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-family: veintiocho;
+            font-size: 1.8rem;
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 1px 1px 10px 1px $blood;
+            }
+
+            &:active {
+                transform: translateY(.1rem) scale(.9);
+                box-shadow: none;
+            }
+        }
+    }
+
     .main-market {
         max-width: 1200px;
         display: grid;

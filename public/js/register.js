@@ -17,5 +17,5 @@ const registerUser = async e => {
 		},
 		body: JSON.stringify(data)
 	});
-	if (res.ok) location.href = 'black-market';
+	if (res.ok) location.href = 'login';
 };
