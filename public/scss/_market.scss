@@ -14,9 +14,9 @@
 
     }
 
-    .btn-logout-container {
+    .btns-container {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-evenly;
 
         a {
             width: fit-content;
@@ -35,7 +35,7 @@
             }
 
             &:active {
-                transform: translateY(.1rem) scale(.9);
+                transform: scale(0.97);
                 box-shadow: none;
             }
         }
@@ -131,6 +131,14 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .body-market {
+        .btns-container {
+            justify-content: flex-end;
         }
     }
 }
