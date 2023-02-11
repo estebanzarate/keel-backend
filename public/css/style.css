@@ -736,7 +736,7 @@ body footer .spoti iframe {
   background-color: rgba(0, 0, 0, 0.9);
   opacity: 0;
   visibility: hidden;
-  z-index: 100;
+  z-index: 300;
   transition: opacity 0.3s linear;
 }
 .body-gallery .gallery-modal.img-modal-visible {
