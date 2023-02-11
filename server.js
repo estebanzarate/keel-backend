@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
+import cors from 'cors';
 import * as dotenv from 'dotenv';
 dotenv.config();
 import path from 'path';
@@ -28,6 +29,7 @@ app.use(
 		saveUninitialized: false
 	})
 );
+app.use(cors());
 app.use('/', router);
 
 app.all('*', (req, res) => res.sendFile(path.join(__dirname, '/../public/pages/error404.html')));

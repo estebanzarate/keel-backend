@@ -47,10 +47,13 @@ const logout = async e => {
 	}
 };
 
+const isLogged = () => {};
+
 document.addEventListener('click', e => {
 	addProduct(e);
 	logout(e);
 });
 
-getProducts();
-getCart();
+document.addEventListener('DOMContentLoaded', () => {
+	getProducts();
+});
