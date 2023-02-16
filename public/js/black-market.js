@@ -43,13 +43,8 @@ const getCart = async () => {
 	}
 };
 
-const logout = async e => {
-	if (e.target.matches('.btn-logout')) {
-		const res = await fetch('http://localhost:8080/logout');
-		console.log(res);
-		// if (res.ok) location.href = 'black-market';
-	}
-};
+const logout = async e =>
+	e.target.matches('.btn-logout') && (await fetch('http://localhost:8080/logout'));
 
 document.addEventListener('click', e => {
 	addProduct(e);

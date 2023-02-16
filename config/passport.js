@@ -11,10 +11,10 @@ export default new Strategy(
 	(username, password, done) => {
 		User.findOne({ email: username })
 			.then(user => {
-				if (!user) return done(null, false);
+				if (!user) return done('User not found', false);
 				const isValid = isValidPassword(user, password);
 				if (isValid) return done(null, user);
-				else return done(null, false);
+				else return done('Wrong password', false);
 			})
 			.catch(error => done(error));
 	}

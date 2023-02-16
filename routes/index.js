@@ -48,25 +48,10 @@ router.post('/register', async (req, res) => {
 	res.status(200).json({ message: 'User registered' });
 });
 
-// async (req, res) => {
-// 	const { email, password } = req.body;
-// 	const user = await User.findOne({ email });
-// 	if (!user) return res.status(404).json({ message: 'User not found' });
-// 	const hash = isValidPassword(password, user);
-// 	if (!hash) return res.status(401).json({ message: 'Wrong password' });
-// 	delete user.password;
-// 	req.session.user = user;
-// 	res.status(200).json({ message: 'Login successful', payload: req.user });
-// };
-
 router.post(
 	'/login',
-	passport.authenticate('local', {
-		failWithError: true
-	}),
-	function (error, req, res, next) {
-		res.json({ message: 'Error', error });
-	}
+	passport.authenticate('local'),
+	(error, req, res, next) => error && res.status(401).json({ message: error })
 );
 
 router.get('/logout', (req, res) => {
