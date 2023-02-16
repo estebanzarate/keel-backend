@@ -615,6 +615,9 @@ body footer .spoti iframe {
   background-color: #000;
   z-index: 5;
 }
+.body-market .cart.show {
+  display: flex;
+}
 .body-market .btns-container {
   display: flex;
   justify-content: space-evenly;
@@ -630,6 +633,9 @@ body footer .spoti iframe {
   font-size: 1.8rem;
   text-decoration: none;
   cursor: pointer;
+}
+.body-market .btns-container a.hide {
+  display: none;
 }
 .body-market .btns-container a:hover {
   box-shadow: 1px 1px 10px 1px rgb(207, 0, 0);

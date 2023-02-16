@@ -18,4 +18,12 @@ const registerUser = async e => {
 		body: JSON.stringify(data)
 	});
 	if (res.ok) location.href = 'login';
+	const { error } = await res.json();
+	if (error === 'Email already registered') {
+		const inputPassword = document.querySelector('.input-email');
+		inputPassword.insertAdjacentHTML('afterend', `<p class='res-msg'>${error}</p>`);
+		setTimeout(() => {
+			inputPassword.nextSibling.remove();
+		}, 2000);
+	}
 };

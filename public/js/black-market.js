@@ -1,5 +1,7 @@
 const mainMarket = document.querySelector('.main-market');
 const btnBuy = document.querySelectorAll('.btn-buy');
+const btnsContainer = document.querySelector('.btns-container');
+const btnLogout = `<a href="/logout">logout</a>`;
 
 const getProducts = async () => {
 	const res = await fetch('http://localhost:8080/products');
@@ -34,8 +36,10 @@ const addProduct = async e => {
 
 const getCart = async () => {
 	const res = await fetch('http://localhost:8080/cart');
-	const { token } = await res.json();
-	if (token) {
+	if (res.ok) {
+		document.querySelectorAll('.btn-market').forEach(btn => btn.classList.add('hide'));
+		btnsContainer.insertAdjacentHTML('afterbegin', btnLogout);
+		const { cart } = await res.json();
 	}
 };
 
@@ -47,13 +51,10 @@ const logout = async e => {
 	}
 };
 
-const isLogged = () => {};
-
 document.addEventListener('click', e => {
 	addProduct(e);
 	logout(e);
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-	getProducts();
-});
+getProducts();
+getCart();

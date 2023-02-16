@@ -2,7 +2,6 @@ import path from 'path';
 import { __dirname } from '../utils/utils.js';
 import Product from '../models/productModel.js';
 
-const home = (req, res) => res.sendFile(path.join(__dirname, '/../public/index.html'));
 const about = (req, res) => res.sendFile(path.join(__dirname, '/../public/pages/about.html'));
 const blackMarket = (req, res) =>
 	res.sendFile(path.join(__dirname, '/../public/pages/black-market.html'));
@@ -15,4 +14,4 @@ const getProducts = async (req, res) => {
 	res.status(200).json(products);
 };
 
-export { home, about, blackMarket, gallery, contact, register, login, getProducts };
+export { about, blackMarket, gallery, contact, register, login, getProducts };

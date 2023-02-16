@@ -2,10 +2,10 @@
 	"name": "keel",
 	"version": "1.0.0",
 	"description": "Website",
-	"main": "server.js",
+	"main": "app.js",
 	"type": "module",
 	"scripts": {
-		"dev": "nodemon server.js",
+		"dev": "nodemon app.js",
 		"sass": "sass --watch public/scss/style.scss public/css/style.css"
 	},
 	"repository": {
@@ -29,7 +29,6 @@
 	"dependencies": {
 		"bcrypt": "^5.1.0",
 		"connect-mongo": "^4.6.0",
-		"cookie-parser": "^1.4.6",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.3",
 		"express": "^4.18.2",
@@ -38,6 +37,7 @@
 		"mongoose": "^6.8.3",
 		"passport": "^0.6.0",
 		"passport-jwt": "^4.0.1",
+		"passport-local": "^1.0.0",
 		"sass": "^1.57.1"
 	}
 }

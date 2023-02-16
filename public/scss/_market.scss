@@ -12,6 +12,9 @@
         background-color: #000;
         z-index: 5;
 
+        &.show {
+            display: flex;
+        }
     }
 
     .btns-container {
@@ -29,6 +32,10 @@
             font-size: 1.8rem;
             text-decoration: none;
             cursor: pointer;
+
+            &.hide {
+                display: none;
+            }
 
             &:hover {
                 box-shadow: 1px 1px 10px 1px $blood;
