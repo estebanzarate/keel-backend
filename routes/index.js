@@ -8,10 +8,11 @@ import {
 	gallery,
 	register,
 	login,
-	getProducts
+	getProducts,
+	admin
 } from '../controller/controller.js';
 import User from '../models/userModel.js';
-import { isAuth } from './authMiddleware.js';
+import { isAdmin, isAuth } from './authMiddleware.js';
 
 const router = Router();
 
@@ -20,7 +21,14 @@ router.get('/black-market', blackMarket);
 router.get('/gallery', gallery);
 router.get('/contact', contact);
 router.get('/register', register);
-router.get('/login', login);
+router.get(
+	'/login',
+	(req, res, next) => {
+		if (req.user) res.redirect('/black-market');
+		next();
+	},
+	login
+);
 router.get('/products', getProducts);
 router.get('/cart', isAuth, async (req, res) => {
 	const { cart } = await User.findOne({ email: req.user.email });
@@ -30,6 +38,7 @@ router.get('/logout', (req, res, next) => {
 	req.logout(error => next(error));
 	res.redirect('/login');
 });
+router.get('/admin', isAdmin, admin);
 
 router.post('/register', async (req, res) => {
 	const { email, password } = req.body;
@@ -50,7 +59,15 @@ router.post('/register', async (req, res) => {
 // 	res.status(200).json({ message: 'Login successful', payload: req.user });
 // };
 
-router.post('/login', passport.authenticate('local'));
+router.post(
+	'/login',
+	passport.authenticate('local', {
+		failWithError: true
+	}),
+	function (error, req, res, next) {
+		res.json({ message: 'Error', error });
+	}
+);
 
 router.get('/logout', (req, res) => {
 	res.status(200).json({ message: 'Logout' });

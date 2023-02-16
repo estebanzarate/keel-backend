@@ -18,18 +18,20 @@ const loginUser = async e => {
 		body: JSON.stringify(data)
 	});
 	if (res.ok) location.href = 'black-market';
-	const { message } = await res.json();
-	if (message === 'Wrong password') {
-		const inputPassword = document.querySelector('.input-password');
-		inputPassword.insertAdjacentHTML('afterend', `<p class='res-msg'>${message}</p>`);
-		setTimeout(() => {
-			inputPassword.nextSibling.remove();
-		}, 2000);
-	} else if (message === 'User not found') {
-		const inputEmail = document.querySelector('.input-email');
-		inputEmail.insertAdjacentHTML('afterend', `<p class='res-msg'>${message}</p>`);
-		setTimeout(() => {
-			inputEmail.nextSibling.remove();
-		}, 2000);
-	}
+	console.log({ res });
+	const json = await res.json();
+	console.log({ json });
+	// if (message === 'Wrong password') {
+	// 	const inputPassword = document.querySelector('.input-password');
+	// 	inputPassword.insertAdjacentHTML('afterend', `<p class='res-msg'>${message}</p>`);
+	// 	setTimeout(() => {
+	// 		inputPassword.nextSibling.remove();
+	// 	}, 2000);
+	// } else if (message === 'User not found') {
+	// 	const inputEmail = document.querySelector('.input-email');
+	// 	inputEmail.insertAdjacentHTML('afterend', `<p class='res-msg'>${message}</p>`);
+	// 	setTimeout(() => {
+	// 		inputEmail.nextSibling.remove();
+	// 	}, 2000);
+	// }
 };

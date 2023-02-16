@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const userSchema = new mongoose.Schema({
 	email: String,
 	password: String,
-	cart: []
+	cart: [],
+	admin: { type: Boolean, default: 'false' }
 });
 
 const User = mongoose.model('User', userSchema);

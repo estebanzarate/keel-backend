@@ -13,5 +13,6 @@ const getProducts = async (req, res) => {
 	const products = await Product.find({});
 	res.status(200).json(products);
 };
+const admin = async (req, res) => res.sendFile(path.join(__dirname, '/../public/pages/admin.html'));
 
-export { about, blackMarket, gallery, contact, register, login, getProducts };
+export { about, blackMarket, gallery, contact, register, login, getProducts, admin };
