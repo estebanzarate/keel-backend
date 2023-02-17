@@ -28,9 +28,16 @@ const getProducts = async () => {
 
 const addProduct = async e => {
 	if (e.target.matches('.btn-buy')) {
-		await fetch(`http://localhost:8080/addProduct/${e.target.dataset.id}`, {
-			method: 'POST'
+		const res = await fetch(`http://localhost:8080/addProduct`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ prodId: e.target.dataset.id })
 		});
+		if (!res.ok) {
+			// Modal
+		}
 	}
 };
 
@@ -40,6 +47,7 @@ const getCart = async () => {
 		document.querySelectorAll('.btn-market').forEach(btn => btn.classList.add('hide'));
 		btnsContainer.insertAdjacentHTML('afterbegin', btnLogout);
 		const { cart } = await res.json();
+		console.log({ cart });
 	}
 };
 

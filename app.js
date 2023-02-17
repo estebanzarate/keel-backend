@@ -10,6 +10,7 @@ dotenv.config();
 import path from 'path';
 import { __dirname } from './utils/utils.js';
 import router from './routes/index.js';
+import routerViews from './routes/views.js';
 const { MONGODB_USER, MONGODB_PASS, SECRET } = process.env;
 
 const app = express();
@@ -41,6 +42,7 @@ app.use(passport.session());
 // });
 
 app.use('/', router);
+app.use('/', routerViews);
 
 app.all('*', (req, res) => res.sendFile(path.join(__dirname, '/../public/pages/error404.html')));
 

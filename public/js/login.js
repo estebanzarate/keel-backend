@@ -17,7 +17,6 @@ const loginUser = async e => {
 		},
 		body: JSON.stringify(data)
 	});
-
 	if (res.ok) location.href = 'black-market';
 	const { message } = await res.json();
 	if (message === 'Wrong password') {
